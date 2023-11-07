@@ -36,8 +36,8 @@ public class Ejercicio03 {
 
 			racionDiariaPorAnimal = comidaDiaria / numAnimales;
 			System.out.println("No tenemos suficiente comida para todos los animales.");
-			System.out.println("Cada animal debe recibir " + racionDiariaPorAnimal + " kilos de comida al día.");
-			System.out.println("Como no tenemos esa cantidad, los animales deberan comer: "
+			System.out.println("Si tuvieramos la comida suficiente cada animal debería recibir " + racionDiariaPorAnimal + " kilos de comida al día.");
+			System.out.println("Como no tenemos esa cantidad, los animales comerán: "
 					+ comidaComprada / numAnimales + " kilos de comida al día");
 			System.out.println("Faltarían por comprar: " + (comidaDiaria - comidaComprada) + " kilos");
 
