@@ -25,8 +25,6 @@ public class Ejercicio03 {
 		System.out.print("Introduce la cantidad total de kilos de comida que comen todos los animales al día: ");
 		comidaDiaria = sc.nextDouble();
 
-		racionDiariaPorAnimal = 0.0;
-
 		if (numAnimales != 0 && comidaComprada >= comidaDiaria) {
 			System.out.println("Tenemos suficiente comida para todos los animales.");
 
