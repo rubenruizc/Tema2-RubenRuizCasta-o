@@ -26,6 +26,7 @@ public class Ejercicio07 {
 
 		if (horas > 0 && minutos > 0 && segundos > 0 && minutos <= 60 && segundos <= 60) {
 
+			
 			if (horas == 24) {
 				horas = 0;
 				dias++;

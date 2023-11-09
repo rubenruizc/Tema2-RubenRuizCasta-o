@@ -10,7 +10,7 @@ public class Ejercicio01 {
 		int minutos = 0;
 		int segundos = 0;
 		int cantidadIncrementar = 0;
-		
+
 		Scanner sc = new Scanner(System.in);
 		do {
 			try {
@@ -32,7 +32,7 @@ public class Ejercicio01 {
 				sc.nextLine();
 			}
 
-		} while (minutos < 0 || minutos > 60);
+		} while (minutos < 0 || minutos > 59);
 
 		do {
 			try {
@@ -43,8 +43,8 @@ public class Ejercicio01 {
 				sc.nextLine();
 			}
 
-		} while (segundos < 0 || minutos > 60);
-		
+		} while (segundos < 0 || segundos > 59);
+
 		do {
 			try {
 				System.out.print("Introduzca el número de segundos que quieras incrementar: ");
@@ -56,9 +56,31 @@ public class Ejercicio01 {
 
 		} while (cantidadIncrementar < 0);
 		
-		minutos = minutos + cantidadIncrementar;
 		
-	System.out.println(horas + ":" + minutos + ":" + segundos);
+		int suma = segundos+cantidadIncrementar;
+		
+		if (suma > 59) {
+			
+			minutos += suma/60;
+			segundos = suma%60 == 0 ? 0 : suma%60;
+			
+			if (minutos > 59) {
+				horas += minutos%60 == 0 ? 0 : minutos%60;
+				minutos = minutos%60 == 0 ? 0 : minutos%60;
+			}
+			
+		}
+		
+		if (horas > 23) {
+			horas = 0;
+		}
+		
+		
+		System.out.println(horas + ":0" + minutos + ":" + segundos);
+		
+	
+		
+		sc.close();
 	}
 
 }
