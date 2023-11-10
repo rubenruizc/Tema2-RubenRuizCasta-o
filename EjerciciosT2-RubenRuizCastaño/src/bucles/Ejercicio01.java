@@ -12,74 +12,60 @@ public class Ejercicio01 {
 		int cantidadIncrementar = 0;
 
 		Scanner sc = new Scanner(System.in);
-		do {
-			try {
+		try {
+			do {
+
 				System.out.print("Introduzca un número de horas: ");
 				horas = sc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Su dato no es del tipo correspondiente");
-				sc.nextLine();
-			}
 
-		} while (horas < 0 || horas > 23);
+			} while (horas < 0 || horas > 23);
 
-		do {
-			try {
+			do {
+
 				System.out.print("Introduzca un número de minutos: ");
 				minutos = sc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Su dato no es del tipo correspondiente");
-				sc.nextLine();
-			}
 
-		} while (minutos < 0 || minutos > 59);
+			} while (minutos < 0 || minutos > 59);
 
-		do {
-			try {
+			do {
+
 				System.out.print("Introduzca un número de segundos: ");
 				segundos = sc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Su dato no es del tipo correspondiente");
-				sc.nextLine();
-			}
 
-		} while (segundos < 0 || segundos > 59);
+			} while (segundos < 0 || segundos > 59);
 
-		do {
-			try {
+			do {
 				System.out.print("Introduzca el número de segundos que quieras incrementar: ");
 				cantidadIncrementar = sc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Su dato no es del tipo correspondiente");
-				sc.nextLine();
-			}
 
-		} while (cantidadIncrementar < 0);
-		
-		
-		int suma = segundos+cantidadIncrementar;
-		
-		if (suma > 59) {
-			
-			minutos += suma/60;
-			segundos = suma%60 == 0 ? 0 : suma%60;
-			
-			if (minutos > 59) {
-				horas += minutos%60 == 0 ? 0 : minutos%60;
-				minutos = minutos%60 == 0 ? 0 : minutos%60;
+			} while (cantidadIncrementar < 0);
+
+		} catch (InputMismatchException e) {
+			System.out.println("Su respuesta no es apropiada");
+			sc.nextLine();
+		}
+
+		while (cantidadIncrementar > 0) {
+			if (segundos + cantidadIncrementar > 59) {
+				cantidadIncrementar -= 60 - segundos;
+				segundos = 0;
+				minutos++;
+				if (minutos > 59) {
+					minutos = 0;
+					horas++;
+					if (horas > 23) {
+						horas = 0;
+					}
+				}
+			} else {
+				segundos += cantidadIncrementar;
+				cantidadIncrementar = 0;
 			}
-			
 		}
-		
-		if (horas > 23) {
-			horas = 0;
-		}
-		
-		
-		System.out.println(horas + ":0" + minutos + ":" + segundos);
-		
-	
-		
+
+		System.out.println("La nueva hora es: " + (horas < 10 ? "0" + horas : horas) + ":"
+				+ (minutos < 10 ? "0" + minutos : minutos) + ":" + (segundos < 10 ? "0" + segundos : segundos));
+
 		sc.close();
 	}
 

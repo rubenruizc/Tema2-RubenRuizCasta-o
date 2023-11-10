@@ -20,11 +20,8 @@ public class Ejercicio09 {
 			numero /= 10;
 			contador++;
 		}
-		if (contador == 1) {
-			System.out.println("Su número tiene: " + contador + " cifra.");
-		} else {
-			System.out.println("Su número tiene: " + contador + " cifras.");
-		}
+		System.out.println("Su número tiene: " + contador + (contador == 1 ? " cifra" : " cifras"));
+
 		sc.close();
 	}
 
