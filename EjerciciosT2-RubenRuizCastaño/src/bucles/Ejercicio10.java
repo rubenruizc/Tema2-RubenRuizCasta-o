@@ -36,15 +36,7 @@ public class Ejercicio10 {
 				// Se obtiene el resto de i/10
 				cifra2 = i % 10;
 
-				/**
-				 * Se le suma a cifra1 el valor de cifra2,haciendo que cifra1 quede a la
-				 * izquierda y cifra2 a la derecha Ejemplo: 121 seria 120+1 = 121 inverso =
-				 * cifra1 + cifra2;
-				 */
-
-				// System.out.println("cifra1 = " + cifra1);
-				// System.out.println("cifra2 = " + cifra2);
-				// System.out.println(inverso);
+	
 			}
 
 			// Comprobamos si el número es igual al inverso

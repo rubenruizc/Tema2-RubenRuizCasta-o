@@ -5,13 +5,20 @@ import java.util.Scanner;
 public class Ejercicio04 {
 
 	public static void main(String[] args) {
-
+		
+		// Variable donde guardaremos el número del usuario
 		int num;
+		
+		// Variable donde guardaremos el valor del número
 		String numTxt;
+		
+		// Scanner para leer del teclado
 		Scanner sc = new Scanner(System.in);
-
+		
+		// Le pedimos al usuario un número entre el 1 y el 99
 		System.out.println("Introduzca un número entre 1 y 99");
-
+		
+		// Leemos el número
 		num = sc.nextInt();
 
 		// Variable donde se almacena la primera cifra
@@ -134,6 +141,10 @@ public class Ejercicio04 {
 			System.out.println(numTxt);
 
 		}
+		
+		// Cerramos el Scanner 
 		sc.close();
-	}
-}
+		
+	} // Cierre del main
+	
+} // Cierre de la clase 
