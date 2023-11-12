@@ -3,11 +3,11 @@ package bucles;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Ejercicio03 {
+public class Ejercicio07 {
 
 	public static void main(String[] args) {
 		
-		// Variable donde guardaremos el número del usuario
+		// Variable donde guardaremos el número introducido por el usuario
 		int numero;
 		
 		// Scanner para leer del teclado
@@ -22,25 +22,25 @@ public class Ejercicio03 {
 			// Leemos el número
 			numero = sc.nextInt();
 			
-			// Bucle para dibujar el triángulo
+			// Bucle para ir contando el número de filas
 			for (int fila = 1; fila <= numero; fila++) {
-
-				// Bucle para mprimir espacios en blanco
-				for (int columna = 1; columna <= numero - fila; columna++) {
-					System.out.print(" ");
+				
+				// Bucle para ir contando el número de columnas
+				for (int columna = 1; columna <= fila; columna++) {
+					System.out.print(columna);
 				}
-
-				// Bucle para imprimir asteriscos
-				for (int asteriscos = 1; asteriscos <= fila; asteriscos++) {
-					System.out.print("* ");
+				
+				// Bucle para ir contando el contenido de cada fila
+				for (int columna = fila - 1; columna >= 1; columna--) {
+					System.out.print(columna);
 				}
-
-				// Cambiar de línea después de cada fila
+				
+				// Separación entre cada fila
 				System.out.println();
 			}
-
+			
 		} catch (InputMismatchException e) {
-			System.out.println("Valor mal introducido");
+			System.out.println("Valores mal introducidos");
 			sc.nextLine();
 		}
 		
@@ -49,4 +49,4 @@ public class Ejercicio03 {
 		
 	} // Cierre del main
 	
-} // Cierre de la clase 
+} // Cierre de la clase
